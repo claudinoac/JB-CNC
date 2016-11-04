@@ -3,10 +3,10 @@
   (general
     (links 172)
     (no_connects 81)
-    (area -128.705 -22.48 240.765001 182.9212)
+    (area -128.705 22.98346 274.083451 149.54)
     (thickness 1.6)
     (drawings 4)
-    (tracks 638)
+    (tracks 640)
     (zones 0)
     (modules 80)
     (nets 68)
@@ -3336,6 +3336,8 @@
   (gr_line (start 240.665 132.715) (end 240.665 42.545) (angle 90) (layer F.Fab) (width 0.2))
   (gr_line (start 50.8 132.715) (end 240.665 132.715) (angle 90) (layer F.Fab) (width 0.2))
 
+  (segment (start 20.701 42.799) (end 30.48 42.799) (width 0.8) (layer F.Cu) (net 0))
+  (segment (start 30.48 42.799) (end 49.276 24.003) (width 0.8) (layer F.Cu) (net 0) (tstamp 581D0A70))
   (segment (start 159.258 67.945) (end 161.29 67.945) (width 1.4) (layer B.Cu) (net 2))
   (segment (start 166.497 62.738) (end 169.037 62.738) (width 1.4) (layer B.Cu) (net 2) (tstamp 581CFE4F))
   (segment (start 161.29 67.945) (end 166.497 62.738) (width 1.4) (layer B.Cu) (net 2) (tstamp 581CFE4E))
