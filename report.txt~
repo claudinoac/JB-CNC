@@ -1,0 +1,12 @@
+Error: Component 'J1' pad '32' not found in footprint 'cta_arduinos:arduino_2009_header'
+
+Error: Component 'J1' pad '31' not found in footprint 'cta_arduinos:arduino_2009_header'
+
+Error: Component 'J1' pad '2' not found in footprint 'cta_arduinos:arduino_2009_header'
+
+Error: Component 'U8' pad 'VI' not found in footprint 'TO_SOT_Packages_THT:TO-220_Neutral123_Vertical'
+
+Error: Component 'U8' pad 'VO' not found in footprint 'TO_SOT_Packages_THT:TO-220_Neutral123_Vertical'
+
+Error: Component 'U8' pad 'GND' not found in footprint 'TO_SOT_Packages_THT:TO-220_Neutral123_Vertical'
+
