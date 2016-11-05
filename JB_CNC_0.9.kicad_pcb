@@ -2056,7 +2056,7 @@
   )
 
   (module Socket_Strips:Socket_Strip_Straight_1x01 (layer F.Cu) (tedit 54E9F79C) (tstamp 580F0AC7)
-    (at 205.994 102.235)
+    (at 200.279 92.075)
     (descr "Through hole socket strip")
     (tags "socket strip")
     (path /56BF888D)
