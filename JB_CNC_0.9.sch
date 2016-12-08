@@ -489,16 +489,14 @@ Sensor da porta \nPino 1 NF\nPino 2 NA\nPino 3 Conn\nDebounce: 20ms\n
 $Comp
 L CONN_01X02 P24
 U 1 1 56AFBCA6
-P 15300 2650
-F 0 "P24" H 15300 2800 50  0001 C CNN
-F 1 "ASPIRADOR" V 15400 2650 50  0000 C CNN
-F 2 "w_conn_kk100:kk100_22-23-2021" H 15300 2650 50  0001 C CNN
-F 3 "" H 15300 2650 50  0000 C CNN
-	1    15300 2650
-	1    0    0    -1  
+P 13600 2800
+F 0 "P24" H 13600 2950 50  0001 C CNN
+F 1 "PROBE" V 13700 2800 50  0000 C CNN
+F 2 "w_conn_kk100:kk100_22-23-2021" H 13600 2800 50  0001 C CNN
+F 3 "" H 13600 2800 50  0000 C CNN
+	1    13600 2800
+	-1   0    0    1   
 $EndComp
-Text Notes 13350 4100 0    60   ~ 0
-Pino para ativar e desativar o relé de alimentação\ndo aspirador\n\nDa mesma forma que foi feito na bomba de fluído \narrefecedor, deixa-se somente o pino  para ativar e\ndesativar o relé de alimentação.\n
 $Comp
 L CONN_01X02 P18
 U 1 1 56AFC070
@@ -525,7 +523,7 @@ F 3 "" H 14600 5650 60  0000 C CNN
 $EndComp
 Text Notes 13700 6750 0    60   ~ 0
 Sinalizador de segurança SPINDLE_LED.\n\nQuando o spindle é ligado, o led_spindle_on \n(LED vermelho externo) é ativado, sinalizando\nque não é seguro mexer na máquina, pois o \nspindle está ligado, ou seja, a máquina está\nem operação. Quando o spindle é desligado,\nentão led_spindle_off (LED verde externo) é\nativado, sinalizando que é seguro mexer \nna máquina.
-Text Notes 10650 4550 0    60   ~ 0
+Text Notes 2250 -450 0    60   ~ 0
 Amplificação do sinal SPINDLE_DIR para\nutilizar no inversor de frequência:\n\nO relé de ativação das entradas do inversor\nde frequência é do tipo 12V, portanto usa-se\num circuito transistorizado para amplificar o\nsinal do arduíno de 5 para 14V com corrente\nsuficiente para ativar o relé.\n
 $Comp
 L R R21
@@ -736,105 +734,61 @@ $EndComp
 $Comp
 L BC546 Q3
 U 1 1 57066D78
-P 11800 3350
-F 0 "Q3" H 12000 3425 50  0001 L CNN
-F 1 "BC546" H 11550 3150 50  0000 L CNN
-F 2 "TO_SOT_Packages_THT:TO-92_Inline_Wide" H 12000 3275 50  0001 L CIN
-F 3 "" H 11800 3350 50  0000 L CNN
-	1    11800 3350
+P 3250 -1650
+F 0 "Q3" H 3450 -1575 50  0001 L CNN
+F 1 "BC546" H 3000 -1850 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-92_Inline_Wide" H 3450 -1725 50  0001 L CIN
+F 3 "" H 3250 -1650 50  0000 L CNN
+	1    3250 -1650
 	1    0    0    -1  
 $EndComp
 $Comp
 L R R17
 U 1 1 57066D7E
-P 11450 3350
-F 0 "R17" V 11525 3350 50  0001 C CNN
-F 1 "2k7" V 11450 3350 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 11380 3350 50  0001 C CNN
-F 3 "" H 11450 3350 50  0000 C CNN
-	1    11450 3350
+P 2900 -1650
+F 0 "R17" V 2975 -1650 50  0001 C CNN
+F 1 "2k7" V 2900 -1650 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 2830 -1650 50  0001 C CNN
+F 3 "" H 2900 -1650 50  0000 C CNN
+	1    2900 -1650
 	0    1    1    0   
 $EndComp
 $Comp
 L CONN_01X02 P19
 U 1 1 57066D8A
-P 12400 2900
-F 0 "P19" H 12400 3050 50  0001 C CNN
-F 1 "SPINDLE_DIRECTION" V 12550 2900 50  0000 C CNN
-F 2 "w_conn_kk100:kk100_22-23-2021" H 12400 2900 50  0001 C CNN
-F 3 "" H 12400 2900 50  0000 C CNN
-	1    12400 2900
+P 3850 -2100
+F 0 "P19" H 3850 -1950 50  0001 C CNN
+F 1 "SPINDLE_DIRECTION" V 4000 -2100 50  0000 C CNN
+F 2 "w_conn_kk100:kk100_22-23-2021" H 3850 -2100 50  0001 C CNN
+F 3 "" H 3850 -2100 50  0000 C CNN
+	1    3850 -2100
 	1    0    0    -1  
 $EndComp
 $Comp
 L GND-RESCUE-CapivaraCNC #PWR016
 U 1 1 57066D90
-P 11900 3600
-F 0 "#PWR016" H 11900 3600 30  0001 C CNN
-F 1 "GND" H 11900 3500 47  0000 C CNN
-F 2 "" H 11900 3600 60  0000 C CNN
-F 3 "" H 11900 3600 60  0000 C CNN
-	1    11900 3600
+P 3350 -1400
+F 0 "#PWR016" H 3350 -1400 30  0001 C CNN
+F 1 "GND" H 3350 -1500 47  0000 C CNN
+F 2 "" H 3350 -1400 60  0000 C CNN
+F 3 "" H 3350 -1400 60  0000 C CNN
+	1    3350 -1400
 	-1   0    0    -1  
 $EndComp
 $Comp
 L D 1N4
 U 1 1 57066DA3
-P 11900 2900
-F 0 "1N4" V 11875 3050 50  0001 C CNN
-F 1 "1N4001" H 11900 2800 50  0000 C CNN
-F 2 "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10" H 11900 2900 50  0001 C CNN
-F 3 "" H 11900 2900 50  0000 C CNN
-	1    11900 2900
+P 3350 -2100
+F 0 "1N4" V 3325 -1950 50  0001 C CNN
+F 1 "1N4001" H 3350 -2200 50  0000 C CNN
+F 2 "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10" H 3350 -2100 50  0001 C CNN
+F 3 "" H 3350 -2100 50  0000 C CNN
+	1    3350 -2100
 	0    1    1    0   
 $EndComp
-Text Label 10700 3350 0    60   ~ 0
+Text Label 2150 -1650 0    60   ~ 0
 SPINDLE_DIR
-$Comp
-L BC546 Q4
-U 1 1 57067FB2
-P 14500 3100
-F 0 "Q4" H 14700 3175 50  0001 L CNN
-F 1 "BC546" H 14250 2900 50  0000 L CNN
-F 2 "TO_SOT_Packages_THT:TO-92_Inline_Wide" H 14700 3025 50  0001 L CIN
-F 3 "" H 14500 3100 50  0000 L CNN
-	1    14500 3100
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R19
-U 1 1 57067FB8
-P 14150 3100
-F 0 "R19" V 14225 3100 50  0001 C CNN
-F 1 "2k7" V 14150 3100 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 14080 3100 50  0001 C CNN
-F 3 "" H 14150 3100 50  0000 C CNN
-	1    14150 3100
-	0    1    1    0   
-$EndComp
-$Comp
-L GND #PWR017
-U 1 1 57067FCA
-P 14600 3300
-F 0 "#PWR017" H 14600 3300 30  0001 C CNN
-F 1 "GND" H 14600 3150 47  0000 C CNN
-F 2 "" H 14600 3300 60  0000 C CNN
-F 3 "" H 14600 3300 60  0000 C CNN
-	1    14600 3300
-	-1   0    0    -1  
-$EndComp
-$Comp
-L D 1N2
-U 1 1 57067FDD
-P 14600 2650
-F 0 "1N2" V 14525 2775 50  0001 C CNN
-F 1 "1N4001" H 14600 2550 50  0000 C CNN
-F 2 "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10" H 14600 2650 50  0001 C CNN
-F 3 "" H 14600 2650 50  0000 C CNN
-	1    14600 2650
-	0    1    1    0   
-$EndComp
-Text Label 13600 3100 0    60   ~ 0
+Text Label 14450 2750 0    60   ~ 0
 PROBE
 $Comp
 L BC546 Q1
@@ -1278,12 +1232,12 @@ $EndComp
 $Comp
 L +14V #PWR031
 U 1 1 58062D3D
-P 11900 2650
-F 0 "#PWR031" H 11900 2780 20  0001 C CNN
-F 1 "+14V" H 11905 2765 47  0000 C CNN
-F 2 "" H 11900 2650 60  0000 C CNN
-F 3 "" H 11900 2650 60  0000 C CNN
-	1    11900 2650
+P 3350 -2350
+F 0 "#PWR031" H 3350 -2220 20  0001 C CNN
+F 1 "+14V" H 3355 -2235 47  0000 C CNN
+F 2 "" H 3350 -2350 60  0000 C CNN
+F 3 "" H 3350 -2350 60  0000 C CNN
+	1    3350 -2350
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1317,17 +1271,6 @@ F 1 "+14V" H 14055 915 47  0000 C CNN
 F 2 "" H 14050 800 60  0000 C CNN
 F 3 "" H 14050 800 60  0000 C CNN
 	1    14050 800 
-	1    0    0    -1  
-$EndComp
-$Comp
-L +14V #PWR035
-U 1 1 5806548C
-P 14600 2400
-F 0 "#PWR035" H 14600 2530 20  0001 C CNN
-F 1 "+14V" H 14605 2515 47  0000 C CNN
-F 2 "" H 14600 2400 60  0000 C CNN
-F 3 "" H 14600 2400 60  0000 C CNN
-	1    14600 2400
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1843,8 +1786,6 @@ Wire Notes Line
 	13400 4350 13400 6800
 Wire Notes Line
 	15950 4350 15950 6800
-Wire Notes Line
-	13050 2400 10550 2400
 Wire Wire Line
 	11600 5000 11600 6700
 Wire Wire Line
@@ -1896,13 +1837,9 @@ Connection ~ 1700 1350
 Connection ~ 14050 1550
 Wire Wire Line
 	9350 3400 9350 3550
-Connection ~ 11900 3100
+Connection ~ 3350 -1900
 Wire Wire Line
-	11300 3350 10700 3350
-Wire Wire Line
-	14600 2400 14600 2500
-Wire Wire Line
-	14000 3100 13600 3100
+	2750 -1650 2150 -1650
 Connection ~ 6350 4800
 Wire Wire Line
 	6350 4350 6350 4450
@@ -1944,9 +1881,9 @@ Wire Wire Line
 Wire Wire Line
 	15050 5350 15150 5350
 Wire Wire Line
-	11900 3100 12100 3100
+	3350 -1900 3550 -1900
 Wire Wire Line
-	11900 3050 11900 3150
+	3350 -1950 3350 -1850
 Wire Wire Line
 	6350 4750 6350 4850
 Wire Wire Line
@@ -1965,16 +1902,16 @@ Wire Wire Line
 	9200 3550 10000 3550
 Connection ~ 9200 3550
 Wire Wire Line
-	11900 2700 12100 2700
+	3350 -2300 3550 -2300
 Wire Wire Line
-	12100 2700 12100 2850
+	3550 -2300 3550 -2150
 Wire Wire Line
-	12100 2850 12200 2850
+	3550 -2150 3650 -2150
 Wire Wire Line
-	12200 2950 12100 2950
+	3650 -2050 3550 -2050
 Wire Wire Line
-	12100 2950 12100 3100
-Connection ~ 11900 2700
+	3550 -2050 3550 -1900
+Connection ~ 3350 -2300
 Wire Wire Line
 	3400 2200 4000 2200
 Wire Wire Line
@@ -2126,25 +2063,9 @@ Wire Notes Line
 Wire Notes Line
 	12850 600  15200 600 
 Wire Wire Line
-	14600 2450 14900 2450
-Wire Wire Line
-	14900 2700 14900 2850
-Wire Wire Line
-	14900 2700 15100 2700
-Connection ~ 14600 2450
-Wire Wire Line
 	9350 3150 9350 3300
 Wire Wire Line
-	11900 2650 11900 2750
-Wire Wire Line
-	14900 2450 14900 2600
-Wire Wire Line
-	14900 2600 15100 2600
-Wire Wire Line
-	14600 2800 14600 2900
-Wire Wire Line
-	14900 2850 14600 2850
-Connection ~ 14600 2850
+	3350 -2350 3350 -2250
 Wire Wire Line
 	15000 5050 15050 5050
 Wire Wire Line
@@ -2165,13 +2086,11 @@ Wire Notes Line
 Wire Notes Line
 	13400 4350 15950 4350
 Wire Notes Line
-	13050 2400 13050 4600
+	4500 -2600 4500 -400
 Wire Notes Line
-	10550 2400 10550 4600
+	2000 -2600 2000 -400
 Wire Notes Line
 	6700 4050 4550 4050
-Wire Notes Line
-	15950 2200 13250 2200
 Wire Notes Line
 	4450 4000 1950 4000
 Wire Wire Line
@@ -2216,7 +2135,7 @@ Wire Notes Line
 Wire Notes Line
 	10850 600  10850 1950
 Wire Notes Line
-	10550 4600 13050 4600
+	2000 -400 4500 -400
 Wire Notes Line
 	10150 5900 7300 5900
 Wire Notes Line
@@ -2227,12 +2146,6 @@ Wire Notes Line
 	7200 4150 7200 6200
 Wire Notes Line
 	7200 6200 4850 6200
-Wire Notes Line
-	15950 2200 15950 4200
-Wire Notes Line
-	15950 4200 13250 4200
-Wire Notes Line
-	13250 4200 13250 2200
 Wire Wire Line
 	2950 2800 2900 2800
 Wire Wire Line
@@ -2299,4 +2212,63 @@ Wire Wire Line
 	14600 4600 14600 4700
 Wire Notes Line
 	10750 2450 6800 2450
+$Comp
+L R R?
+U 1 1 5849B1A5
+P 14100 2750
+F 0 "R?" V 14180 2750 50  0001 C CNN
+F 1 "22k" V 14100 2750 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 14030 2750 50  0001 C CNN
+F 3 "" H 14100 2750 50  0000 C CNN
+	1    14100 2750
+	0    1    1    0   
+$EndComp
+$Comp
+L C C?
+U 1 1 5849B1AB
+P 14300 2950
+F 0 "C?" H 14325 3050 50  0001 L CNN
+F 1 "1uF" H 14325 2850 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Radial_D5_L6_P2.5" H 14338 2800 50  0001 C CNN
+F 3 "" H 14300 2950 50  0000 C CNN
+	1    14300 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND-RESCUE-CapivaraCNC #PWR?
+U 1 1 5849B1B1
+P 14300 3250
+F 0 "#PWR?" H 14300 3250 30  0001 C CNN
+F 1 "GND" H 14300 3150 47  0000 C CNN
+F 2 "" H 14300 3250 60  0000 C CNN
+F 3 "" H 14300 3250 60  0000 C CNN
+	1    14300 3250
+	-1   0    0    -1  
+$EndComp
+Connection ~ 14300 2750
+Wire Wire Line
+	14300 2800 14300 2750
+Wire Wire Line
+	14250 2750 14750 2750
+Wire Wire Line
+	13950 2750 13800 2750
+Wire Wire Line
+	13800 2850 13800 3150
+Wire Wire Line
+	13800 3150 14300 3150
+Wire Wire Line
+	14300 3100 14300 3200
+Connection ~ 14300 3150
+Text Notes 13300 3800 0    60   ~ 0
+Pino para entrada da sonda de contato\n(Referência variável para o eixo Z)\nPulldown com filtros para \ndebouncing (20ms).\n
+Wire Notes Line
+	13250 2600 13250 3900
+Wire Notes Line
+	13250 3900 15200 3900
+Wire Notes Line
+	13250 2600 15200 2600
+Wire Notes Line
+	15200 2600 15200 3900
+Wire Notes Line
+	4500 -2600 2000 -2600
 $EndSCHEMATC
