@@ -1,6 +1,0 @@
-Error: Component 'U8' pad 'VI' not found in footprint 'TO_SOT_Packages_THT:TO-220_Neutral123_Vertical'
-
-Error: Component 'U8' pad 'VO' not found in footprint 'TO_SOT_Packages_THT:TO-220_Neutral123_Vertical'
-
-Error: Component 'U8' pad 'GND' not found in footprint 'TO_SOT_Packages_THT:TO-220_Neutral123_Vertical'
-
