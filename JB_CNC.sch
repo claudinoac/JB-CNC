@@ -1,5 +1,4 @@
 EESchema Schematic File Version 2
-LIBS:JB_CNC_0.9-cache
 LIBS:w_analog
 LIBS:w_connectors
 LIBS:w_device
@@ -97,6 +96,8 @@ LIBS:Xicor
 LIBS:xilinx
 LIBS:zetex
 LIBS:Zilog
+LIBS:JB_CNC-cache
+LIBS:JB_CNC-rescue
 EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
@@ -288,7 +289,7 @@ F 3 "" H 2850 2750 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R4
+L R-RESCUE-JB_CNC R4
 U 1 1 56ABA95D
 P 3100 2800
 F 0 "R4" V 3025 2800 50  0001 C CNN
@@ -340,50 +341,48 @@ Fins de curso mecânicos. \nNormalmente fechados. Pulldown externo.\nPinos 1 e 2
 $Comp
 L CA3140-RESCUE-JB_CNC_0.9 U1
 U 1 1 56ABC66E
-P 2300 4750
-F 0 "U1" H 2300 4750 50  0000 C CNN
-F 1 "CA3140" H 2450 4550 50  0000 C CNN
-F 2 "Housings_DIP:DIP-8_W7.62mm_LongPads" H 2200 4650 50  0001 C CNN
-F 3 "" H 2300 4750 50  0000 C CNN
-	1    2300 4750
+P 2500 4750
+F 0 "U1" H 2500 4750 50  0000 C CNN
+F 1 "CA3140" H 2650 4550 50  0000 C CNN
+F 2 "Housings_DIP:DIP-8_W7.62mm_LongPads" H 2400 4650 50  0001 C CNN
+F 3 "" H 2500 4750 50  0000 C CNN
+	1    2500 4750
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1
+L R-RESCUE-JB_CNC R1
 U 1 1 56ABC706
-P 1450 4650
-F 0 "R1" V 1530 4650 50  0001 C CNN
-F 1 "10k" V 1450 4650 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 1380 4650 50  0001 C CNN
-F 3 "" H 1450 4650 50  0000 C CNN
-	1    1450 4650
+P 1500 4650
+F 0 "R1" V 1580 4650 50  0001 C CNN
+F 1 "10k" V 1500 4650 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 1430 4650 50  0001 C CNN
+F 3 "" H 1500 4650 50  0000 C CNN
+	1    1500 4650
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R2
+L R-RESCUE-JB_CNC R2
 U 1 1 56ABC727
-P 1950 5150
-F 0 "R2" V 2030 5150 50  0001 C CNN
-F 1 "10k" V 1950 5150 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 1880 5150 50  0001 C CNN
-F 3 "" H 1950 5150 50  0000 C CNN
-	1    1950 5150
+P 2100 5150
+F 0 "R2" V 2180 5150 50  0001 C CNN
+F 1 "10k" V 2100 5150 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 2030 5150 50  0001 C CNN
+F 3 "" H 2100 5150 50  0000 C CNN
+	1    2100 5150
 	-1   0    0    1   
 $EndComp
 $Comp
 L CONN_01X02 P8
 U 1 1 56ABC7A4
-P 3250 4800
-F 0 "P8" H 3250 4950 50  0001 C CNN
-F 1 "F_INV" V 3350 4800 50  0000 C CNN
-F 2 "w_conn_kk100:kk100_22-23-2021" H 3250 4800 50  0001 C CNN
-F 3 "" H 3250 4800 50  0000 C CNN
-	1    3250 4800
+P 3150 4800
+F 0 "P8" H 3150 4950 50  0001 C CNN
+F 1 "F_INV" V 3250 4800 50  0000 C CNN
+F 2 "w_conn_kk100:kk100_22-23-2021" H 3150 4800 50  0001 C CNN
+F 3 "" H 3150 4800 50  0000 C CNN
+	1    3150 4800
 	1    0    0    -1  
 $EndComp
-Text Label 2750 4750 0    60   ~ 0
-V_CTRL
-Text Label 650  4650 0    60   ~ 0
+Text Label 700  4650 0    60   ~ 0
 SPINDLE_PWM
 Text Notes 800  6500 0    60   ~ 0
 Circuito conversor Analog-Digital + Amplificador.\n\nComo o inversor de frequência utilizado trabalha \nsomente com valores analógicos de tensão, o sinal\ndo PWM é convertido para o valor equivalente de \ntensão analógica e amplificado para escala máxima\nde 0-10V de modo  que o inversor de frequência \nreconheça o valor de velocidade que o GRBL solicita .
@@ -412,51 +411,40 @@ Logica digital de fim de curso:\nO arduíno detecta fim de curso\nsem diferencia
 $Comp
 L BC546 Q2
 U 1 1 56AF8970
-P 9450 3500
-F 0 "Q2" H 9650 3500 50  0001 L CNN
-F 1 "BC546" H 9200 3300 50  0000 L CNN
-F 2 "TO_SOT_Packages_THT:TO-92_Inline_Wide" H 9650 3425 50  0001 L CIN
-F 3 "" H 9450 3500 50  0000 L CNN
-	1    9450 3500
+P 5800 8300
+F 0 "Q2" H 6000 8300 50  0001 L CNN
+F 1 "BC546" H 5550 8100 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-92_Inline_Wide" H 6000 8225 50  0001 L CIN
+F 3 "" H 5800 8300 50  0000 L CNN
+	1    5800 8300
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R14
+L R-RESCUE-JB_CNC R14
 U 1 1 56AF8A1B
-P 8850 3500
-F 0 "R14" V 8925 3500 50  0001 C CNN
-F 1 "2k7" V 8850 3500 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 8780 3500 50  0001 C CNN
-F 3 "" H 8850 3500 50  0000 C CNN
-	1    8850 3500
+P 5350 8300
+F 0 "R14" V 5425 8300 50  0001 C CNN
+F 1 "10k" V 5350 8300 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 5280 8300 50  0001 C CNN
+F 3 "" H 5350 8300 50  0000 C CNN
+	1    5350 8300
 	0    1    1    0   
-$EndComp
-$Comp
-L CONN_01X02 P17
-U 1 1 56AF8B46
-P 9900 3050
-F 0 "P17" H 9900 3200 50  0001 C CNN
-F 1 "SPINDLE_PWR" V 10000 3150 50  0000 C CNN
-F 2 "w_conn_kk100:kk100_22-23-2021" H 9900 3050 50  0001 C CNN
-F 3 "" H 9900 3050 50  0000 C CNN
-	1    9900 3050
-	1    0    0    -1  
 $EndComp
 $Comp
 L GND-RESCUE-CapivaraCNC #PWR07
 U 1 1 56AF95BB
-P 9550 3750
-F 0 "#PWR07" H 9550 3750 30  0001 C CNN
-F 1 "GND" H 9550 3650 47  0000 C CNN
-F 2 "" H 9550 3750 60  0000 C CNN
-F 3 "" H 9550 3750 60  0000 C CNN
-	1    9550 3750
+P 5900 8650
+F 0 "#PWR07" H 5900 8650 30  0001 C CNN
+F 1 "GND" H 5900 8550 47  0000 C CNN
+F 2 "" H 5900 8650 60  0000 C CNN
+F 3 "" H 5900 8650 60  0000 C CNN
+	1    5900 8650
 	-1   0    0    -1  
 $EndComp
-Text Label 7250 3400 0    60   ~ 0
+Text Label 4100 8200 0    60   ~ 0
 V_CTRL
-Text Notes 7300 5350 0    60   ~ 0
-Ativação/Desativação do spindle + aspirador via PWM:\n\nComo nessa versão do GRBL temos o pino SPINDLE_PWM\nsubstituindo o pino SPINDLE_EN, o spindle é ativado\ndiretamente no PWM do arduíno via GRBL. Como o valor V_CTRL\nnunca chega  totalmente a zero, o spindle nunca pára.\nPara resolver esse problema, usa-se um circuito transistorizado\nque dá nível lógico zero na entrada de controle de ativação do\nspindle no inversor de frequência, ou seja, desliga quando\nV_REF for menor que 0,25V. O buffer com AMP-OP serve para a\ncorrente que vai na base do transistor não afetar a saída do\nfiltro em V_CTRL.\nUtilizou-se VCC para nível lógico alto porque o relé que será\nativado é do padrão 12V
+Text Notes 4200 10500 0    60   ~ 0
+Ativação/Desativação do spindle + aspirador via PWM:\n\nComo nessa versão do GRBL temos o pino SPINDLE_PWM\nsubstituindo o pino SPINDLE_EN, o spindle é ativado\ndiretamente no PWM do arduíno via GRBL. Como o valor V_CTRL\nnunca chega  totalmente a zero, o spindle nunca pára.\nPara resolver esse problema, usa-se um circuito transistorizado\nque dá nível lógico zero na entrada de controle de ativação do\nspindle no inversor de frequência, ou seja, desliga quando\nV_REF for menor que 0,15V. O buffer com AMP-OP serve para a\ncorrente que vai na base do transistor não afetar a saída do\nfiltro em V_CTRL.\nUtiliza-se um optoisolador para separar as alimentações da placa\ne do inversor. As conexões externas são ligadas ao inversor.\n\nPino 1: GND do Inversor\nPino 2: LIBERAÇÂO/PARADA\nPino 3: +24V do Inversor
 $Comp
 L CONN_01X03 P23
 U 1 1 56AFA0CB
@@ -471,7 +459,7 @@ $EndComp
 Text Label 10900 1450 0    60   ~ 0
 SAFETY_IN
 $Comp
-L R R25
+L R-RESCUE-JB_CNC R25
 U 1 1 56AFA5A1
 P 11900 1350
 F 0 "R25" V 11980 1350 50  0001 C CNN
@@ -520,10 +508,10 @@ F 3 "" H 14450 3950 60  0000 C CNN
 $EndComp
 Text Notes 13100 5100 0    60   ~ 0
 Sinalizador de segurança SPINDLE_LED.\n\nQuando o spindle é ligado, o LED_SPINDLE_ON \n(LED vermelho externo) é ativado, sinalizando\nque não é seguro mexer na máquina, pois o \nspindle está ligado, ou seja, a máquina está\nem operação. Quando o spindle é desligado,\nentão LED_SPINDLE_OFF (LED verde externo) é\nativado, sinalizando que é seguro mexer \nna máquina.
-Text Notes 13100 7400 0    60   ~ 0
+Text Notes 13100 8500 0    60   ~ 0
 Amplificação do sinal SPINDLE_DIR para\nutilizar no inversor de frequência:\n\nO relé de ativação das entradas do inversor\nde frequência é do tipo 12V, portanto usa-se\num circuito transistorizado para amplificar o\nsinal do arduíno de 5 para VCC com corrente\nsuficiente para ativar o relé.\n
 $Comp
-L R R20
+L R-RESCUE-JB_CNC R20
 U 1 1 56AFCE4E
 P 11400 2900
 F 0 "R20" V 11480 2900 50  0001 C CNN
@@ -564,7 +552,7 @@ SAFETY_IN
 Text Notes 10650 5250 0    60   ~ 0
 Os botões de comando do GRBL usam\npullup interno por padrão, ou seja, \nATIVO-BAIXO com chave NA.\nUsam-se pulldown com filtros para \ndebouncing (15ms) e uma chave NF\npara manter o ACTIVE LOW.\n
 $Comp
-L LED D2
+L LED-RESCUE-JB_CNC D2
 U 1 1 56AFFBB7
 P 13750 1050
 F 0 "D2" H 13750 1150 50  0001 C CNN
@@ -575,7 +563,7 @@ F 3 "" H 13750 1050 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R26
+L R-RESCUE-JB_CNC R26
 U 1 1 56AFFBE3
 P 13750 1400
 F 0 "R26" V 13830 1400 50  0001 C CNN
@@ -620,18 +608,18 @@ F 3 "" H 14750 1200 50  0000 C CNN
 	1    14750 1200
 	1    0    0    -1  
 $EndComp
-NoConn ~ 2600 4550
-NoConn ~ 2600 4650
-NoConn ~ 2600 4850
+NoConn ~ 2800 4550
+NoConn ~ 2800 4650
+NoConn ~ 2800 4850
 $Comp
 L GND-RESCUE-CapivaraCNC #PWR012
 U 1 1 56B4EF16
-P 1650 5450
-F 0 "#PWR012" H 1650 5450 30  0001 C CNN
-F 1 "GND" H 1650 5350 47  0000 C CNN
-F 2 "" H 1650 5450 60  0000 C CNN
-F 3 "" H 1650 5450 60  0000 C CNN
-	1    1650 5450
+P 1700 5450
+F 0 "#PWR012" H 1700 5450 30  0001 C CNN
+F 1 "GND" H 1700 5350 47  0000 C CNN
+F 2 "" H 1700 5450 60  0000 C CNN
+F 3 "" H 1700 5450 60  0000 C CNN
+	1    1700 5450
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -695,74 +683,6 @@ F 3 "" H 12150 2200 50  0000 C CNN
 	1    12150 2200
 	1    0    0    -1  
 $EndComp
-$Comp
-L D 1N2
-U 1 1 57066392
-P 9550 3050
-F 0 "1N2" H 9550 2950 50  0001 C CNN
-F 1 "1N4001" H 9550 2950 50  0000 C CNN
-F 2 "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10" H 9550 3050 50  0001 C CNN
-F 3 "" H 9550 3050 50  0000 C CNN
-	1    9550 3050
-	0    1    1    0   
-$EndComp
-$Comp
-L BC546 Q4
-U 1 1 57066D78
-P 14100 6200
-F 0 "Q4" H 14300 6275 50  0001 L CNN
-F 1 "BC546" H 13850 6000 50  0000 L CNN
-F 2 "TO_SOT_Packages_THT:TO-92_Inline_Wide" H 14300 6125 50  0001 L CIN
-F 3 "" H 14100 6200 50  0000 L CNN
-	1    14100 6200
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R28
-U 1 1 57066D7E
-P 13750 6200
-F 0 "R28" V 13825 6200 50  0001 C CNN
-F 1 "2k7" V 13750 6200 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 13680 6200 50  0001 C CNN
-F 3 "" H 13750 6200 50  0000 C CNN
-	1    13750 6200
-	0    1    1    0   
-$EndComp
-$Comp
-L CONN_01X02 P26
-U 1 1 57066D8A
-P 14700 5750
-F 0 "P26" H 14700 5900 50  0001 C CNN
-F 1 "DIREÇÃO_SPINDLE" V 14850 5750 50  0000 C CNN
-F 2 "w_conn_kk100:kk100_22-23-2021" H 14700 5750 50  0001 C CNN
-F 3 "" H 14700 5750 50  0000 C CNN
-	1    14700 5750
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND-RESCUE-CapivaraCNC #PWR015
-U 1 1 57066D90
-P 14200 6450
-F 0 "#PWR015" H 14200 6450 30  0001 C CNN
-F 1 "GND" H 14200 6350 47  0000 C CNN
-F 2 "" H 14200 6450 60  0000 C CNN
-F 3 "" H 14200 6450 60  0000 C CNN
-	1    14200 6450
-	-1   0    0    -1  
-$EndComp
-$Comp
-L D 1N4
-U 1 1 57066DA3
-P 14200 5750
-F 0 "1N4" V 14175 5900 50  0001 C CNN
-F 1 "1N4001" H 14200 5650 50  0000 C CNN
-F 2 "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10" H 14200 5750 50  0001 C CNN
-F 3 "" H 14200 5750 50  0000 C CNN
-	1    14200 5750
-	0    1    1    0   
-$EndComp
-Text Label 13000 6200 0    60   ~ 0
-SPINDLE_DIR
 Text Label 11950 5500 0    60   ~ 0
 PROBE*
 $Comp
@@ -777,7 +697,7 @@ F 3 "" H 9650 6450 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R17
+L R-RESCUE-JB_CNC R17
 U 1 1 57068BCE
 P 9300 6450
 F 0 "R17" V 9400 6450 50  0001 C CNN
@@ -812,7 +732,7 @@ $EndComp
 Text Label 8600 6450 0    60   ~ 0
 COOLANT_EN
 $Comp
-L R R31
+L R-RESCUE-JB_CNC R31
 U 1 1 57071538
 P 14450 3050
 F 0 "R31" V 14530 3050 50  0001 C CNN
@@ -834,7 +754,7 @@ F 3 "" H 14350 3500 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R32
+L R-RESCUE-JB_CNC R32
 U 1 1 570725D5
 P 14700 3250
 F 0 "R32" V 14780 3250 50  0001 C CNN
@@ -878,18 +798,18 @@ F 3 "" H 10100 6000 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR018
+L GND-RESCUE-JB_CNC #PWR018
 U 1 1 57F739AC
-P 7850 3850
-F 0 "#PWR018" H 7850 3850 30  0001 C CNN
-F 1 "GND" H 7850 3750 47  0000 C CNN
-F 2 "" H 7850 3850 60  0000 C CNN
-F 3 "" H 7850 3850 60  0000 C CNN
-	1    7850 3850
+P 4700 8650
+F 0 "#PWR018" H 4700 8650 30  0001 C CNN
+F 1 "GND" H 4700 8550 47  0000 C CNN
+F 2 "" H 4700 8650 60  0000 C CNN
+F 3 "" H 4700 8650 60  0000 C CNN
+	1    4700 8650
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R8
+L R-RESCUE-JB_CNC R8
 U 1 1 57FDB6A9
 P 5100 850
 F 0 "R8" V 5180 850 50  0001 C CNN
@@ -911,7 +831,7 @@ F 3 "" H 5350 1100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR019
+L GND-RESCUE-JB_CNC #PWR019
 U 1 1 57FDDDC7
 P 5200 1400
 F 0 "#PWR019" H 5200 1400 30  0001 C CNN
@@ -946,7 +866,7 @@ $EndComp
 Text Label 6100 1750 0    60   ~ 0
 Y_LIMIT_B
 $Comp
-L R R12
+L R-RESCUE-JB_CNC R12
 U 1 1 57FDE9E0
 P 6150 1900
 F 0 "R12" V 6230 1900 50  0001 C CNN
@@ -968,7 +888,7 @@ F 3 "" H 5900 2150 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR021
+L GND-RESCUE-JB_CNC #PWR021
 U 1 1 57FDE9F5
 P 6050 2450
 F 0 "#PWR021" H 6050 2450 30  0001 C CNN
@@ -1003,7 +923,7 @@ $EndComp
 Text Label 6100 2750 0    60   ~ 0
 Z_LIMIT_B
 $Comp
-L R R13
+L R-RESCUE-JB_CNC R13
 U 1 1 57FDEABE
 P 6150 2900
 F 0 "R13" V 6230 2900 50  0001 C CNN
@@ -1025,7 +945,7 @@ F 3 "" H 5900 3150 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR023
+L GND-RESCUE-JB_CNC #PWR023
 U 1 1 57FDEAD3
 P 6050 3450
 F 0 "#PWR023" H 6050 3450 30  0001 C CNN
@@ -1060,7 +980,7 @@ $EndComp
 Text Label 5150 1750 2    60   ~ 0
 Y_LIMIT_A
 $Comp
-L R R9
+L R-RESCUE-JB_CNC R9
 U 1 1 57FDF141
 P 5100 1900
 F 0 "R9" V 5180 1900 50  0001 C CNN
@@ -1082,7 +1002,7 @@ F 3 "" H 5350 2150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR025
+L GND-RESCUE-JB_CNC #PWR025
 U 1 1 57FDF156
 P 5200 2450
 F 0 "#PWR025" H 5200 2450 30  0001 C CNN
@@ -1117,7 +1037,7 @@ $EndComp
 Text Label 5150 2750 2    60   ~ 0
 Z_LIMIT_A
 $Comp
-L R R10
+L R-RESCUE-JB_CNC R10
 U 1 1 57FDF1E3
 P 5100 2900
 F 0 "R10" V 5180 2900 50  0001 C CNN
@@ -1139,7 +1059,7 @@ F 3 "" H 5350 3150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR027
+L GND-RESCUE-JB_CNC #PWR027
 U 1 1 57FDF1F8
 P 5200 3450
 F 0 "#PWR027" H 5200 3450 30  0001 C CNN
@@ -1150,7 +1070,7 @@ F 3 "" H 5200 3450 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R30
+L R-RESCUE-JB_CNC R30
 U 1 1 5806B1D2
 P 14250 2850
 F 0 "R30" V 14330 2850 50  0001 C CNN
@@ -1194,7 +1114,7 @@ F 3 "" H 11650 3100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R21
+L R-RESCUE-JB_CNC R21
 U 1 1 5807490A
 P 11400 3700
 F 0 "R21" V 11480 3700 50  0001 C CNN
@@ -1259,9 +1179,9 @@ F 3 "" H 10750 2950 50  0000 C CNN
 	1    10750 2950
 	-1   0    0    1   
 $EndComp
-NoConn ~ 8250 3300
-NoConn ~ 8250 3400
-NoConn ~ 8250 3600
+NoConn ~ 5100 8100
+NoConn ~ 5100 8200
+NoConn ~ 5100 8400
 $Comp
 L GND-RESCUE-CapivaraCNC #PWR029
 U 1 1 5808FFBC
@@ -1285,7 +1205,7 @@ F 3 "" H 11550 1500 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R19
+L R-RESCUE-JB_CNC R19
 U 1 1 580B9617
 P 11150 3900
 F 0 "R19" V 11230 3900 50  0001 C CNN
@@ -1307,7 +1227,7 @@ F 3 "" H 11150 4050 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R18
+L R-RESCUE-JB_CNC R18
 U 1 1 580BA31D
 P 11150 3100
 F 0 "R18" V 11230 3100 50  0001 C CNN
@@ -1329,7 +1249,7 @@ F 3 "" H 11150 3250 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R24
+L R-RESCUE-JB_CNC R24
 U 1 1 580BA85C
 P 11750 4400
 F 0 "R24" V 11830 4400 50  0001 C CNN
@@ -1390,14 +1310,14 @@ $EndComp
 NoConn ~ 2700 800 
 NoConn ~ 2700 900 
 $Comp
-L R R3
+L R-RESCUE-JB_CNC R3
 U 1 1 580DBB3F
-P 2300 4200
-F 0 "R3" V 2380 4200 50  0001 C CNN
-F 1 "10k" V 2300 4200 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 2230 4200 50  0001 C CNN
-F 3 "" H 2300 4200 50  0000 C CNN
-	1    2300 4200
+P 2500 4200
+F 0 "R3" V 2580 4200 50  0001 C CNN
+F 1 "10k" V 2500 4200 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 2430 4200 50  0001 C CNN
+F 3 "" H 2500 4200 50  0000 C CNN
+	1    2500 4200
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -1414,12 +1334,12 @@ $EndComp
 $Comp
 L CA3140-RESCUE-JB_CNC_0.9 U2
 U 1 1 57F737D2
-P 7950 3500
-F 0 "U2" H 7950 3500 50  0001 C CNN
-F 1 "CA3140" H 8100 3300 50  0000 C CNN
-F 2 "Housings_DIP:DIP-8_W7.62mm_LongPads" H 7850 3400 50  0001 C CNN
-F 3 "" H 7950 3500 50  0000 C CNN
-	1    7950 3500
+P 4800 8300
+F 0 "U2" H 4800 8300 50  0001 C CNN
+F 1 "CA3140" H 4950 8100 50  0000 C CNN
+F 2 "Housings_DIP:DIP-8_W7.62mm_LongPads" H 4700 8200 50  0001 C CNN
+F 3 "" H 4800 8300 50  0000 C CNN
+	1    4800 8300
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1445,7 +1365,7 @@ F 3 "" V 3550 2900 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR037
+L GND-RESCUE-JB_CNC #PWR037
 U 1 1 57FDE452
 P 6050 1400
 F 0 "#PWR037" H 6050 1400 30  0001 C CNN
@@ -1467,7 +1387,7 @@ F 3 "" H 5900 1100 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R11
+L R-RESCUE-JB_CNC R11
 U 1 1 57FDE43D
 P 6150 850
 F 0 "R11" V 6230 850 50  0001 C CNN
@@ -1513,7 +1433,7 @@ F 3 "" H 9500 1250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R23
+L R-RESCUE-JB_CNC R23
 U 1 1 5849B1A5
 P 11600 5500
 F 0 "R23" V 11680 5500 50  0001 C CNN
@@ -1559,46 +1479,22 @@ F 3 "" H 5550 4850 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R16
+L R-RESCUE-JB_CNC R16
 U 1 1 58542C60
-P 9200 3100
-F 0 "R16" V 9280 3100 50  0001 C CNN
-F 1 "68k" V 9200 3100 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 9130 3100 50  0001 C CNN
-F 3 "" H 9200 3100 50  0000 C CNN
-	1    9200 3100
+P 5550 7950
+F 0 "R16" V 5630 7950 50  0001 C CNN
+F 1 "68k" V 5550 7950 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 5480 7950 50  0001 C CNN
+F 3 "" H 5550 7950 50  0000 C CNN
+	1    5550 7950
 	1    0    0    -1  
 $EndComp
-$Comp
-L R R15
-U 1 1 58543138
-P 9050 3100
-F 0 "R15" V 9130 3100 50  0001 C CNN
-F 1 "680k" V 9050 3100 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 8980 3100 50  0001 C CNN
-F 3 "" H 9050 3100 50  0000 C CNN
-	1    9050 3100
-	1    0    0    -1  
-$EndComp
-Text Label 8400 3500 0    60   ~ 0
-V_REF
-Text Label 9750 3350 0    60   ~ 0
+Text Label 6050 8000 1    60   ~ 0
 SPINDLE_EN
 Text Notes 3650 6550 0    60   ~ 0
 Ativação do aspirador de acordo com spindle \n\nO aspirador deve sempre estar ligado enquanto\no spindle estiver em operação. Para isto, usa-se \num circuito transistorizado identico ao do spindle\nque ativa/desativa o relé do aspirador exatamente \nquando o relé de ativação do spindle for \nativado/desativado.
 $Comp
-L BC546 Q1
-U 1 1 5854715E
-P 4850 5300
-F 0 "Q1" H 5050 5300 50  0001 L CNN
-F 1 "BC546" H 4600 5100 50  0000 L CNN
-F 2 "TO_SOT_Packages_THT:TO-92_Inline_Wide" H 5050 5225 50  0001 L CIN
-F 3 "" H 4850 5300 50  0000 L CNN
-	1    4850 5300
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R5
+L R-RESCUE-JB_CNC R5
 U 1 1 58547164
 P 4250 5300
 F 0 "R5" V 4325 5300 50  0001 C CNN
@@ -1620,18 +1516,7 @@ F 3 "" H 4950 5550 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L D 1N1
-U 1 1 5854717C
-P 4950 4850
-F 0 "1N1" H 4950 4750 50  0001 C CNN
-F 1 "1N4001" H 4950 4750 50  0000 C CNN
-F 2 "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10" H 4950 4850 50  0001 C CNN
-F 3 "" H 4950 4850 50  0000 C CNN
-	1    4950 4850
-	0    1    1    0   
-$EndComp
-$Comp
-L R R7
+L R-RESCUE-JB_CNC R7
 U 1 1 58547182
 P 4600 4900
 F 0 "R7" V 4680 4900 50  0001 C CNN
@@ -1642,7 +1527,7 @@ F 3 "" H 4600 4900 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R6
+L R-RESCUE-JB_CNC R6
 U 1 1 58547188
 P 4450 4900
 F 0 "R6" V 4530 4900 50  0001 C CNN
@@ -1657,16 +1542,16 @@ V_REF
 $Comp
 L CP C1
 U 1 1 585820FE
-P 1650 5000
-F 0 "C1" H 1675 5100 50  0001 L CNN
-F 1 "1uF" H 1675 4900 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Radial_D5_L11_P2.5" H 1688 4850 50  0001 C CNN
-F 3 "" H 1650 5000 50  0000 C CNN
-	1    1650 5000
+P 1700 5000
+F 0 "C1" H 1725 5100 50  0001 L CNN
+F 1 "1uF" H 1725 4900 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Radial_D5_L11_P2.5" H 1738 4850 50  0001 C CNN
+F 3 "" H 1700 5000 50  0000 C CNN
+	1    1700 5000
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R27
+L R-RESCUE-JB_CNC R27
 U 1 1 585824EA
 P 13750 3500
 F 0 "R27" V 13830 3500 50  0001 C CNN
@@ -1677,7 +1562,7 @@ F 3 "" H 13750 3500 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R29
+L R-RESCUE-JB_CNC R29
 U 1 1 58582504
 P 13950 3700
 F 0 "R29" V 14030 3700 50  0001 C CNN
@@ -1685,6 +1570,235 @@ F 1 "1k" V 13950 3700 50  0000 C CNN
 F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 13880 3700 50  0001 C CNN
 F 3 "" H 13950 3700 50  0000 C CNN
 	1    13950 3700
+	-1   0    0    1   
+$EndComp
+$Comp
+L GNDPWR-RESCUE-JB_CNC #PWR042
+U 1 1 5859933D
+P 13950 1650
+F 0 "#PWR042" H 13950 1650 30  0001 C CNN
+F 1 "GNDPWR" H 13950 1550 47  0000 C CNN
+F 2 "" H 13950 1650 60  0000 C CNN
+F 3 "" H 13950 1650 60  0000 C CNN
+	1    13950 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND-RESCUE-JB_CNC #PWR043
+U 1 1 58599662
+P 14350 1650
+F 0 "#PWR043" H 14350 1650 30  0001 C CNN
+F 1 "GND" H 14350 1550 47  0000 C CNN
+F 2 "" H 14350 1650 60  0000 C CNN
+F 3 "" H 14350 1650 60  0000 C CNN
+	1    14350 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L R-RESCUE-JB_CNC R22
+U 1 1 5859B3DE
+P 11400 5700
+F 0 "R22" V 11480 5700 50  0001 C CNN
+F 1 "1k" V 11400 5700 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 11330 5700 50  0001 C CNN
+F 3 "" H 11400 5700 50  0000 C CNN
+	1    11400 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L BORNIER W1
+U 1 1 5859BA9E
+P 13050 900
+F 0 "W1" H 13050 1050 50  0001 C CNN
+F 1 "FONTE" V 13150 900 50  0000 C CNN
+F 2 "Connect:bornier2" H 13050 900 50  0001 C CNN
+F 3 "" H 13050 900 50  0000 C CNN
+	1    13050 900 
+	-1   0    0    1   
+$EndComp
+$Comp
+L VCC #PWR044
+U 1 1 585C1542
+P 4700 8000
+F 0 "#PWR044" H 4700 8130 20  0001 C CNN
+F 1 "VCC" H 4705 8115 47  0000 C CNN
+F 2 "" H 4700 8000 60  0000 C CNN
+F 3 "" H 4700 8000 60  0000 C CNN
+	1    4700 8000
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR046
+U 1 1 585C1D17
+P 14450 2800
+F 0 "#PWR046" H 14450 2930 20  0001 C CNN
+F 1 "VCC" H 14455 2915 47  0000 C CNN
+F 2 "" H 14450 2800 60  0000 C CNN
+F 3 "" H 14450 2800 60  0000 C CNN
+	1    14450 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR048
+U 1 1 585C1D5A
+P 9750 5750
+F 0 "#PWR048" H 9750 5880 20  0001 C CNN
+F 1 "VCC" H 9755 5865 47  0000 C CNN
+F 2 "" H 9750 5750 60  0000 C CNN
+F 3 "" H 9750 5750 60  0000 C CNN
+	1    9750 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR049
+U 1 1 585C1D7D
+P 2400 4450
+F 0 "#PWR049" H 2400 4580 20  0001 C CNN
+F 1 "VCC" H 2405 4565 47  0000 C CNN
+F 2 "" H 2400 4450 60  0000 C CNN
+F 3 "" H 2400 4450 60  0000 C CNN
+	1    2400 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR051
+U 1 1 585C1DDE
+P 13750 800
+F 0 "#PWR051" H 13750 930 20  0001 C CNN
+F 1 "VCC" H 13755 915 47  0000 C CNN
+F 2 "" H 13750 800 60  0000 C CNN
+F 3 "" H 13750 800 60  0000 C CNN
+	1    13750 800 
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74LS32 U10
+U 1 1 585C267E
+P 9700 1050
+F 0 "U10" H 9700 1100 50  0000 C CNN
+F 1 "74LS32" H 9700 1000 50  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm_LongPads" H 9700 1050 50  0001 C CNN
+F 3 "" H 9700 1050 50  0000 C CNN
+	1    9700 1050
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74LS32 U10
+U 2 1 585C27C6
+P 9700 1700
+F 0 "U10" H 9700 1750 50  0000 C CNN
+F 1 "74LS32" H 9700 1650 50  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm_LongPads" H 9700 1700 50  0001 C CNN
+F 3 "" H 9700 1700 50  0000 C CNN
+	2    9700 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74LS32 U10
+U 3 1 585C2827
+P 9700 2200
+F 0 "U10" H 9700 2250 50  0000 C CNN
+F 1 "74LS32" H 9700 2150 50  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm_LongPads" H 9700 2200 50  0001 C CNN
+F 3 "" H 9700 2200 50  0000 C CNN
+	3    9700 2200
+	1    0    0    -1  
+$EndComp
+Text Label 1700 4650 0    60   ~ 0
+V_CTRL
+$Comp
+L BC546 Q1
+U 1 1 5854715E
+P 4850 5300
+F 0 "Q1" H 5050 5300 50  0001 L CNN
+F 1 "BC546" H 4600 5100 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-92_Inline_Wide" H 5050 5225 50  0001 L CIN
+F 3 "" H 4850 5300 50  0000 L CNN
+	1    4850 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR050
+U 1 1 585C1DAC
+P 4950 4600
+F 0 "#PWR050" H 4950 4730 20  0001 C CNN
+F 1 "VCC" H 4955 4715 47  0000 C CNN
+F 2 "" H 4950 4600 60  0000 C CNN
+F 3 "" H 4950 4600 60  0000 C CNN
+	1    4950 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L D 1N1
+U 1 1 5854717C
+P 4950 4850
+F 0 "1N1" H 4950 4750 50  0001 C CNN
+F 1 "1N4001" H 4950 4750 50  0000 C CNN
+F 2 "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10" H 4950 4850 50  0001 C CNN
+F 3 "" H 4950 4850 50  0000 C CNN
+	1    4950 4850
+	0    1    1    0   
+$EndComp
+$Comp
+L 4N25 U?
+U 1 1 587FC336
+P 6900 7700
+F 0 "U?" H 6700 7900 50  0001 L CNN
+F 1 "4N25" H 6900 7900 50  0000 L CNN
+F 2 "DIP-6" H 6700 7500 50  0001 L CIN
+F 3 "" H 6900 7700 50  0000 L CNN
+	1    6900 7700
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X03 P?
+U 1 1 587FC589
+P 6550 8700
+F 0 "P?" H 6550 8900 50  0001 C CNN
+F 1 "SPINDLE_PWR" V 6650 8700 50  0000 C CNN
+F 2 "" H 6550 8700 50  0000 C CNN
+F 3 "" H 6550 8700 50  0000 C CNN
+	1    6550 8700
+	0    1    1    0   
+$EndComp
+NoConn ~ 7200 7600
+$Comp
+L R-RESCUE-JB_CNC R?
+U 1 1 587FC6C1
+P 6650 8250
+F 0 "R?" V 6725 8250 50  0001 C CNN
+F 1 "4k7" V 6650 8250 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 6580 8250 50  0001 C CNN
+F 3 "" H 6650 8250 50  0000 C CNN
+	1    6650 8250
+	-1   0    0    1   
+$EndComp
+Text Label 6750 8450 0    60   ~ 0
++24V(EXT)
+Text Label 6450 8500 1    60   ~ 0
+GND(EXT)
+Text Label 6750 8050 0    60   ~ 0
+LIG/DESL
+$Comp
+L R-RESCUE-JB_CNC R?
+U 1 1 587FD547
+P 6400 7600
+F 0 "R?" V 6475 7600 50  0001 C CNN
+F 1 "470" V 6400 7600 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 6330 7600 50  0001 C CNN
+F 3 "" H 6400 7600 50  0000 C CNN
+	1    6400 7600
+	0    1    1    0   
+$EndComp
+$Comp
+L R-RESCUE-JB_CNC R?
+U 1 1 587FD703
+P 5900 7850
+F 0 "R?" V 5975 7850 50  0001 C CNN
+F 1 "1k" V 5900 7850 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 5830 7850 50  0001 C CNN
+F 3 "" H 5900 7850 50  0000 C CNN
+	1    5900 7850
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
@@ -1746,31 +1860,27 @@ Wire Notes Line
 Wire Notes Line
 	6700 600  4550 600 
 Wire Wire Line
-	1600 4650 2000 4650
+	1650 4650 2200 4650
 Wire Wire Line
-	1950 4200 1950 5000
+	2100 4200 2100 5000
 Wire Wire Line
-	2700 4200 2700 4750
+	2900 4200 2900 4750
 Wire Wire Line
-	2600 4750 3050 4750
-Connection ~ 2700 4750
+	2800 4750 2950 4750
+Connection ~ 2900 4750
 Wire Wire Line
-	1650 4650 1650 4850
+	1700 4650 1700 4850
 Wire Wire Line
-	650  4650 1300 4650
+	700  4650 1350 4650
 Wire Wire Line
-	2700 5350 2700 4850
+	2900 5350 2900 4850
 Wire Wire Line
-	2700 4850 3050 4850
+	2900 4850 2950 4850
 Wire Notes Line
 	600  4150 600  6800
 Wire Notes Line
-	3500 4100 3500 6800
-Wire Notes Line
-	3500 4100 600  4100
-Wire Notes Line
 	600  4100 600  4200
-Connection ~ 1650 4650
+Connection ~ 1700 4650
 Wire Wire Line
 	8650 950  9100 950 
 Wire Wire Line
@@ -1828,31 +1938,24 @@ Wire Wire Line
 	14750 1550 14750 1350
 Connection ~ 14350 1550
 Connection ~ 14750 850 
-Connection ~ 2200 5350
+Connection ~ 2400 5350
 Wire Wire Line
-	2200 5350 2200 5050
+	2400 5350 2400 5050
 Wire Wire Line
-	1650 5350 2700 5350
-Connection ~ 1650 5350
+	1700 5350 2900 5350
+Connection ~ 1700 5350
 Wire Wire Line
-	1650 5150 1650 5400
+	1700 5150 1700 5400
 Wire Wire Line
 	3400 1600 4100 1600
 Wire Wire Line
 	4100 1800 3400 1800
 Wire Wire Line
 	4100 1400 3400 1400
-Wire Wire Line
-	2200 4450 2200 4450
 Connection ~ 1700 2350
 Connection ~ 1700 3400
 Connection ~ 1700 1350
 Connection ~ 13750 1550
-Wire Wire Line
-	9700 3100 9700 3350
-Connection ~ 14200 5950
-Wire Wire Line
-	13600 6200 13000 6200
 Connection ~ 9750 6200
 Wire Wire Line
 	9750 5750 9750 5850
@@ -1866,13 +1969,11 @@ Wire Wire Line
 Wire Wire Line
 	13000 3500 13600 3500
 Wire Wire Line
-	2000 4850 1950 4850
-Connection ~ 1950 4850
+	2200 4850 2100 4850
+Connection ~ 2100 4850
 Wire Wire Line
-	1950 5300 1950 5350
-Connection ~ 1950 5350
-Wire Notes Line
-	3500 6800 600  6800
+	2100 5300 2100 5350
+Connection ~ 2100 5350
 Connection ~ 9750 5800
 Wire Wire Line
 	9900 6200 9750 6200
@@ -1881,8 +1982,6 @@ Wire Wire Line
 Wire Wire Line
 	9900 5800 9900 5950
 Wire Wire Line
-	9050 2850 9700 2850
-Wire Wire Line
 	14250 3250 14550 3250
 Connection ~ 14450 3250
 Wire Wire Line
@@ -1890,31 +1989,12 @@ Wire Wire Line
 Wire Wire Line
 	14900 3550 15000 3550
 Wire Wire Line
-	14200 5950 14400 5950
-Wire Wire Line
-	14200 5900 14200 6000
-Wire Wire Line
 	9750 6150 9750 6250
 Wire Wire Line
 	9750 5800 9900 5800
 Wire Wire Line
-	8250 3500 8700 3500
-Connection ~ 8300 3500
-Connection ~ 9550 2850
-Wire Wire Line
-	9550 3200 9550 3300
-Connection ~ 9550 3250
-Wire Wire Line
-	14200 5550 14400 5550
-Wire Wire Line
-	14400 5550 14400 5700
-Wire Wire Line
-	14400 5700 14500 5700
-Wire Wire Line
-	14500 5800 14400 5800
-Wire Wire Line
-	14400 5800 14400 5950
-Connection ~ 14200 5550
+	5100 8300 5200 8300
+Connection ~ 5150 8300
 Wire Wire Line
 	3400 2200 4000 2200
 Wire Wire Line
@@ -1960,11 +2040,11 @@ Wire Wire Line
 Wire Wire Line
 	6300 950  6200 950 
 Wire Wire Line
-	6200 950  6200 1300
+	6200 1300 6200 950 
 Wire Wire Line
 	6000 850  5900 850 
 Wire Wire Line
-	6200 1300 5900 1300
+	5900 1300 6200 1300
 Wire Wire Line
 	5900 1300 5900 1250
 Wire Wire Line
@@ -1980,11 +2060,11 @@ Wire Wire Line
 Wire Wire Line
 	6300 2000 6200 2000
 Wire Wire Line
-	6200 2000 6200 2350
+	6200 2350 6200 2000
 Wire Wire Line
 	6000 1900 5900 1900
 Wire Wire Line
-	6200 2350 5900 2350
+	5900 2350 6200 2350
 Wire Wire Line
 	5900 2350 5900 2300
 Wire Wire Line
@@ -2000,11 +2080,11 @@ Wire Wire Line
 Wire Wire Line
 	6300 3000 6200 3000
 Wire Wire Line
-	6200 3000 6200 3350
+	6200 3350 6200 3000
 Wire Wire Line
 	6000 2900 5900 2900
 Wire Wire Line
-	6200 3350 5900 3350
+	5900 3350 6200 3350
 Wire Wire Line
 	5900 3350 5900 3300
 Wire Wire Line
@@ -2064,10 +2144,6 @@ Wire Notes Line
 Wire Notes Line
 	12850 600  15200 600 
 Wire Wire Line
-	9700 2850 9700 3000
-Wire Wire Line
-	14200 5500 14200 5600
-Wire Wire Line
 	14850 3250 14900 3250
 Wire Wire Line
 	14900 3250 14900 3450
@@ -2082,10 +2158,6 @@ Wire Wire Line
 	14000 2950 14250 2950
 Wire Wire Line
 	14250 2950 14250 3250
-Wire Notes Line
-	15350 5250 15350 7450
-Wire Notes Line
-	12850 5250 12850 7450
 Wire Notes Line
 	4450 4000 1950 4000
 Wire Wire Line
@@ -2121,8 +2193,6 @@ Wire Notes Line
 	12750 600  10850 600 
 Wire Notes Line
 	10850 600  10850 1950
-Wire Notes Line
-	12850 7450 15350 7450
 Wire Notes Line
 	8250 7600 8250 5550
 Wire Notes Line
@@ -2177,19 +2247,17 @@ Wire Notes Line
 Wire Notes Line
 	1950 600  4200 600 
 Wire Wire Line
-	1950 4200 2150 4200
+	2100 4200 2350 4200
 Wire Wire Line
-	2450 4200 2700 4200
+	2650 4200 2900 4200
 Wire Wire Line
-	7250 3400 7650 3400
+	4100 8200 4500 8200
 Wire Wire Line
-	7600 3000 7600 3600
+	4450 7800 4450 8400
 Wire Wire Line
-	7600 3600 7650 3600
+	4450 8400 4500 8400
 Wire Wire Line
 	14350 1150 14350 1600
-Wire Wire Line
-	9550 2800 9550 2900
 Wire Wire Line
 	14450 3700 14450 3900
 Wire Wire Line
@@ -2218,34 +2286,14 @@ Wire Notes Line
 	10750 5350 12700 5350
 Wire Notes Line
 	12700 5350 12700 6650
-Wire Notes Line
-	15350 5250 12850 5250
 Wire Wire Line
 	5350 4900 5350 5050
 Wire Wire Line
 	5350 4650 5350 4800
 Wire Wire Line
-	9700 3250 9550 3250
+	4450 7800 5150 7800
 Wire Wire Line
-	9000 3500 9250 3500
-Wire Wire Line
-	9200 2950 9200 2850
-Wire Wire Line
-	9200 3250 9200 3500
-Connection ~ 9200 3500
-Wire Wire Line
-	9050 2950 9050 2850
-Connection ~ 9200 2850
-Wire Wire Line
-	9050 3250 9050 3500
-Connection ~ 9050 3500
-Wire Wire Line
-	7600 3000 8300 3000
-Wire Wire Line
-	8300 3000 8300 3500
-Wire Wire Line
-	9700 3350 10300 3350
-Connection ~ 9700 3250
+	5150 7800 5150 8300
 Wire Wire Line
 	3800 5300 4100 5300
 Connection ~ 4950 4650
@@ -2279,14 +2327,6 @@ Wire Notes Line
 	3600 4350 6050 4350
 Wire Notes Line
 	6050 4350 6050 6600
-Wire Notes Line
-	10400 2550 10400 5450
-Wire Notes Line
-	10400 5450 7200 5450
-Wire Notes Line
-	7200 5450 7200 2550
-Wire Notes Line
-	7200 2550 10400 2550
 Wire Wire Line
 	13900 3500 14150 3500
 Wire Wire Line
@@ -2300,58 +2340,14 @@ Wire Notes Line
 	12850 2500 12850 5150
 Wire Notes Line
 	12850 5150 15400 5150
-$Comp
-L GNDPWR #PWR042
-U 1 1 5859933D
-P 13950 1650
-F 0 "#PWR042" H 13950 1650 30  0001 C CNN
-F 1 "GNDPWR" H 13950 1550 47  0000 C CNN
-F 2 "" H 13950 1650 60  0000 C CNN
-F 3 "" H 13950 1650 60  0000 C CNN
-	1    13950 1650
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	13550 950  13550 1550
-$Comp
-L GND #PWR043
-U 1 1 58599662
-P 14350 1650
-F 0 "#PWR043" H 14350 1650 30  0001 C CNN
-F 1 "GND" H 14350 1550 47  0000 C CNN
-F 2 "" H 14350 1650 60  0000 C CNN
-F 3 "" H 14350 1650 60  0000 C CNN
-	1    14350 1650
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R22
-U 1 1 5859B3DE
-P 11400 5700
-F 0 "R22" V 11480 5700 50  0001 C CNN
-F 1 "1k" V 11400 5700 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 11330 5700 50  0001 C CNN
-F 3 "" H 11400 5700 50  0000 C CNN
-	1    11400 5700
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	11400 5550 11400 5500
 Connection ~ 11400 5500
 Wire Wire Line
 	11400 5850 11400 5900
 Connection ~ 11400 5900
-$Comp
-L BORNIER W1
-U 1 1 5859BA9E
-P 13050 900
-F 0 "W1" H 13050 1050 50  0001 C CNN
-F 1 "FONTE" V 13150 900 50  0000 C CNN
-F 2 "Connect:bornier2" H 13050 900 50  0001 C CNN
-F 3 "" H 13050 900 50  0000 C CNN
-	1    13050 900 
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	13550 850  13950 850 
 Wire Notes Line
@@ -2362,127 +2358,253 @@ Wire Notes Line
 	10550 2500 12650 2500
 Wire Notes Line
 	15200 2200 12850 2200
-$Comp
-L VCC #PWR044
-U 1 1 585C1542
-P 7850 3200
-F 0 "#PWR044" H 7850 3330 20  0001 C CNN
-F 1 "VCC" H 7855 3315 47  0000 C CNN
-F 2 "" H 7850 3200 60  0000 C CNN
-F 3 "" H 7850 3200 60  0000 C CNN
-	1    7850 3200
-	1    0    0    -1  
-$EndComp
-$Comp
-L VCC #PWR045
-U 1 1 585C1562
-P 9550 2800
-F 0 "#PWR045" H 9550 2930 20  0001 C CNN
-F 1 "VCC" H 9555 2915 47  0000 C CNN
-F 2 "" H 9550 2800 60  0000 C CNN
-F 3 "" H 9550 2800 60  0000 C CNN
-	1    9550 2800
-	1    0    0    -1  
-$EndComp
-$Comp
-L VCC #PWR046
-U 1 1 585C1D17
-P 14450 2800
-F 0 "#PWR046" H 14450 2930 20  0001 C CNN
-F 1 "VCC" H 14455 2915 47  0000 C CNN
-F 2 "" H 14450 2800 60  0000 C CNN
-F 3 "" H 14450 2800 60  0000 C CNN
-	1    14450 2800
-	1    0    0    -1  
-$EndComp
-$Comp
-L VCC #PWR047
-U 1 1 585C1D37
-P 14200 5500
-F 0 "#PWR047" H 14200 5630 20  0001 C CNN
-F 1 "VCC" H 14205 5615 47  0000 C CNN
-F 2 "" H 14200 5500 60  0000 C CNN
-F 3 "" H 14200 5500 60  0000 C CNN
-	1    14200 5500
-	1    0    0    -1  
-$EndComp
-$Comp
-L VCC #PWR048
-U 1 1 585C1D5A
-P 9750 5750
-F 0 "#PWR048" H 9750 5880 20  0001 C CNN
-F 1 "VCC" H 9755 5865 47  0000 C CNN
-F 2 "" H 9750 5750 60  0000 C CNN
-F 3 "" H 9750 5750 60  0000 C CNN
-	1    9750 5750
-	1    0    0    -1  
-$EndComp
-$Comp
-L VCC #PWR049
-U 1 1 585C1D7D
-P 2200 4450
-F 0 "#PWR049" H 2200 4580 20  0001 C CNN
-F 1 "VCC" H 2205 4565 47  0000 C CNN
-F 2 "" H 2200 4450 60  0000 C CNN
-F 3 "" H 2200 4450 60  0000 C CNN
-	1    2200 4450
-	1    0    0    -1  
-$EndComp
-$Comp
-L VCC #PWR050
-U 1 1 585C1DAC
-P 4950 4600
-F 0 "#PWR050" H 4950 4730 20  0001 C CNN
-F 1 "VCC" H 4955 4715 47  0000 C CNN
-F 2 "" H 4950 4600 60  0000 C CNN
-F 3 "" H 4950 4600 60  0000 C CNN
-	1    4950 4600
-	1    0    0    -1  
-$EndComp
-$Comp
-L VCC #PWR051
-U 1 1 585C1DDE
-P 13750 800
-F 0 "#PWR051" H 13750 930 20  0001 C CNN
-F 1 "VCC" H 13755 915 47  0000 C CNN
-F 2 "" H 13750 800 60  0000 C CNN
-F 3 "" H 13750 800 60  0000 C CNN
-	1    13750 800 
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74LS32 U10
-U 1 1 585C267E
-P 9700 1050
-F 0 "U10" H 9700 1100 50  0000 C CNN
-F 1 "74LS32" H 9700 1000 50  0000 C CNN
-F 2 "Housings_DIP:DIP-14_W7.62mm_LongPads" H 9700 1050 50  0001 C CNN
-F 3 "" H 9700 1050 50  0000 C CNN
-	1    9700 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74LS32 U10
-U 2 1 585C27C6
-P 9700 1700
-F 0 "U10" H 9700 1750 50  0000 C CNN
-F 1 "74LS32" H 9700 1650 50  0000 C CNN
-F 2 "Housings_DIP:DIP-14_W7.62mm_LongPads" H 9700 1700 50  0001 C CNN
-F 3 "" H 9700 1700 50  0000 C CNN
-	2    9700 1700
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74LS32 U10
-U 3 1 585C2827
-P 9700 2200
-F 0 "U10" H 9700 2250 50  0000 C CNN
-F 1 "74LS32" H 9700 2150 50  0000 C CNN
-F 2 "Housings_DIP:DIP-14_W7.62mm_LongPads" H 9700 2200 50  0001 C CNN
-F 3 "" H 9700 2200 50  0000 C CNN
-	3    9700 2200
-	1    0    0    -1  
-$EndComp
 Wire Notes Line
 	6700 4150 4550 4150
+Wire Notes Line
+	600  6800 3500 6800
+Wire Notes Line
+	3500 4100 600  4100
+Wire Notes Line
+	3500 6800 3500 4100
+Wire Wire Line
+	6550 7600 6600 7600
+Wire Wire Line
+	5900 8000 5900 8100
+Wire Wire Line
+	6050 7600 6250 7600
+Connection ~ 5900 8050
+Wire Wire Line
+	5900 8500 5900 8600
+Wire Wire Line
+	6200 7800 6200 8550
+Wire Wire Line
+	6200 7800 6600 7800
+Connection ~ 5900 8550
+Wire Wire Line
+	7200 7700 7300 7700
+Wire Wire Line
+	6650 8100 6650 8050
+Wire Wire Line
+	6550 8050 7300 8050
+Wire Wire Line
+	6550 8050 6550 8500
+Wire Wire Line
+	7200 7800 7250 7800
+Wire Wire Line
+	6450 7950 7250 7950
+Wire Wire Line
+	6450 7950 6450 8500
+Connection ~ 6650 8050
+Wire Wire Line
+	6650 8400 6650 8500
+Wire Wire Line
+	6650 8450 7200 8450
+Connection ~ 6650 8450
+Wire Wire Line
+	7250 7950 7250 7800
+Wire Wire Line
+	7300 8050 7300 7700
+Wire Wire Line
+	5550 7800 5550 7650
+Wire Wire Line
+	5550 7650 5900 7650
+Wire Wire Line
+	5900 7650 5900 7700
+Wire Wire Line
+	5550 8100 5550 8300
+Wire Wire Line
+	5500 8300 5600 8300
+Connection ~ 5550 8300
+$Comp
+L +5V #PWR?
+U 1 1 58801FD2
+P 5700 7600
+F 0 "#PWR?" H 5700 7450 50  0001 C CNN
+F 1 "+5V" H 5700 7740 50  0000 C CNN
+F 2 "" H 5700 7600 50  0000 C CNN
+F 3 "" H 5700 7600 50  0000 C CNN
+	1    5700 7600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 7600 5700 7650
+Connection ~ 5700 7650
+Wire Wire Line
+	6050 7500 6050 8050
+Wire Wire Line
+	6050 8050 5900 8050
+Wire Wire Line
+	6200 8550 5900 8550
+Wire Notes Line
+	3900 7400 7400 7400
+Wire Notes Line
+	7400 7400 7400 10600
+Wire Notes Line
+	7400 10600 3900 10600
+Wire Notes Line
+	3900 10600 3900 7400
+Connection ~ 6050 7600
+$Comp
+L BC546 Q?
+U 1 1 5880381A
+P 13950 7050
+F 0 "Q?" H 14150 7050 50  0001 L CNN
+F 1 "BC546" H 13700 6850 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-92_Inline_Wide" H 14150 6975 50  0001 L CIN
+F 3 "" H 13950 7050 50  0000 L CNN
+	1    13950 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L R-RESCUE-JB_CNC R?
+U 1 1 58803820
+P 13600 7050
+F 0 "R?" V 13675 7050 50  0001 C CNN
+F 1 "10k" V 13600 7050 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 13530 7050 50  0001 C CNN
+F 3 "" H 13600 7050 50  0000 C CNN
+	1    13600 7050
+	0    1    1    0   
+$EndComp
+$Comp
+L GND-RESCUE-CapivaraCNC #PWR?
+U 1 1 58803826
+P 14050 7400
+F 0 "#PWR?" H 14050 7400 30  0001 C CNN
+F 1 "GND" H 14050 7300 47  0000 C CNN
+F 2 "" H 14050 7400 60  0000 C CNN
+F 3 "" H 14050 7400 60  0000 C CNN
+	1    14050 7400
+	-1   0    0    -1  
+$EndComp
+Text Label 13400 7050 2    60   ~ 0
+SPINDLE_DIR
+$Comp
+L 4N25 U?
+U 1 1 58803833
+P 15050 6450
+F 0 "U?" H 14850 6650 50  0001 L CNN
+F 1 "4N25" H 15050 6650 50  0000 L CNN
+F 2 "DIP-6" H 14850 6250 50  0001 L CIN
+F 3 "" H 15050 6450 50  0000 L CNN
+	1    15050 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X03 P?
+U 1 1 58803839
+P 14700 7450
+F 0 "P?" H 14700 7650 50  0001 C CNN
+F 1 "SPINDLE_DIRECT" V 14800 7450 50  0000 C CNN
+F 2 "" H 14700 7450 50  0000 C CNN
+F 3 "" H 14700 7450 50  0000 C CNN
+	1    14700 7450
+	0    1    1    0   
+$EndComp
+NoConn ~ 15350 6350
+$Comp
+L R-RESCUE-JB_CNC R?
+U 1 1 58803840
+P 14800 7000
+F 0 "R?" V 14875 7000 50  0001 C CNN
+F 1 "4k7" V 14800 7000 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 14730 7000 50  0001 C CNN
+F 3 "" H 14800 7000 50  0000 C CNN
+	1    14800 7000
+	-1   0    0    1   
+$EndComp
+Text Label 14850 7200 0    60   ~ 0
++24V(EXT)
+Text Label 14600 7250 1    60   ~ 0
+GND(EXT)
+Text Label 14900 6800 0    60   ~ 0
+LIG/DESL
+$Comp
+L R-RESCUE-JB_CNC R?
+U 1 1 58803849
+P 14550 6350
+F 0 "R?" V 14625 6350 50  0001 C CNN
+F 1 "470" V 14550 6350 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 14480 6350 50  0001 C CNN
+F 3 "" H 14550 6350 50  0000 C CNN
+	1    14550 6350
+	0    1    1    0   
+$EndComp
+$Comp
+L R-RESCUE-JB_CNC R?
+U 1 1 5880384F
+P 14050 6600
+F 0 "R?" V 14125 6600 50  0001 C CNN
+F 1 "1k" V 14050 6600 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 13980 6600 50  0001 C CNN
+F 3 "" H 14050 6600 50  0000 C CNN
+	1    14050 6600
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	14700 6350 14750 6350
+Wire Wire Line
+	14050 6750 14050 6850
+Wire Wire Line
+	14200 6350 14400 6350
+Connection ~ 14050 6800
+Wire Wire Line
+	14050 7250 14050 7350
+Wire Wire Line
+	14350 6550 14350 7300
+Wire Wire Line
+	14350 6550 14750 6550
+Connection ~ 14050 7300
+Wire Wire Line
+	15350 6450 15450 6450
+Wire Wire Line
+	14800 6850 14800 6800
+Wire Wire Line
+	14700 6800 15450 6800
+Wire Wire Line
+	14700 6800 14700 7250
+Wire Wire Line
+	15350 6550 15400 6550
+Wire Wire Line
+	14600 6700 15400 6700
+Wire Wire Line
+	14600 6700 14600 7250
+Connection ~ 14800 6800
+Wire Wire Line
+	14800 7150 14800 7250
+Wire Wire Line
+	14800 7200 15300 7200
+Connection ~ 14800 7200
+Wire Wire Line
+	15400 6700 15400 6550
+Wire Wire Line
+	15450 6800 15450 6450
+$Comp
+L +5V #PWR?
+U 1 1 58803876
+P 14050 6450
+F 0 "#PWR?" H 14050 6300 50  0001 C CNN
+F 1 "+5V" H 14050 6590 50  0000 C CNN
+F 2 "" H 14050 6450 50  0000 C CNN
+F 3 "" H 14050 6450 50  0000 C CNN
+	1    14050 6450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	14200 6350 14200 6800
+Wire Wire Line
+	14200 6800 14050 6800
+Wire Wire Line
+	14350 7300 14050 7300
+Connection ~ 14200 6350
+Wire Wire Line
+	12850 7050 13450 7050
+Wire Notes Line
+	15500 6150 12800 6150
+Wire Notes Line
+	12800 6150 12800 8550
+Wire Notes Line
+	12800 8550 15500 8550
+Wire Notes Line
+	15500 8550 15500 6150
 $EndSCHEMATC
