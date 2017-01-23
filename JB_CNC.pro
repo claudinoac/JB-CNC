@@ -1,4 +1,4 @@
-update=Qua 18 Jan 2017 17:10:09 BRST
+update=Seg 23 Jan 2017 18:02:18 BRST
 last_client=kicad
 [eeschema]
 version=1
